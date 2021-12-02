@@ -412,6 +412,10 @@ export const LoginForm = () => {
 
 React Testing Library を使用すれば上記のログインフォームに対するユーザーのインタラクションに関するテストを実行することが可能である。
 
+## 三目並べの実装
+
+[src](./src) 以下に公式チュートリアルの実装サンプルを追加している。
+
 ## Storybook の導入
 
 [公式サイト](https://storybook.js.org/blog/storybook-for-vite/) の手順に従い Vite の環境に Storybook を導入する。
@@ -439,11 +443,17 @@ module.exports = {
 };
 ```
 
+あとはコマンドを実行すれば、Storybook を起動できることがわかる。
+
 ## VRT の用意
+
+では次に Storybook でコンポーネント化した `.stories.*` ファイルに対してスクリーンショットを撮影するために、以下のライブラリを導入する。
 
 ```bash
 npm install --save-dev storycap puppeteer
 ```
+
+次にスクリーンショットを生成するためのコマンドを追加する。これで各 `.stories.*` ファイルのスクリーンショットを保存できる様になる。
 
 ```json
 {
@@ -452,6 +462,8 @@ npm install --save-dev storycap puppeteer
   }
 }
 ```
+
+実際にコマンドを実行すると、以下のように 1 つ 1 つのストーリーに対してスクリーンショットが撮影されていることがわかる。
 
 ```bash
 ./__screenshots__
@@ -481,9 +493,13 @@ npm install --save-dev storycap puppeteer
 
 ## req-suit の追加
 
+では最後に撮影されたスクリーンショットを使用して、画像の差分を検出するためのライブラリを追加する。
+
 ```bash
 npm install --save-dev reg-suit
 ```
+
+以下のコマンドで設定を初期化することができる。
 
 ```bash
 ❯❯❯ npx reg-suit init
@@ -536,16 +552,20 @@ npm install --save-dev reg-suit
 }
 ```
 
-```bash
-npm install --save-dev dotenv-cli
-```
-
-## Cypress の用意
+これでコマンドを実行すれば、比較用のファイルが作成される。
 
 ```bash
-# E2E用のライブラリを追加する
-npm install --save-dev cypress @testing-library/cypress
-
-npm install --save-dev \
-    eslint-plugin-cypress
+npm run vrt
 ```
+
+プロジェクトで使用する場合には AWS S3 や Github との連携を行う必要があるが、今回はローカル環境で動作を検証する。
+
+そのため作成されたスクリーンショットを比較用の `.reg/expected` フォルダにコピーする。
+
+```bash
+cp -rf __screenshots__/* .reg/expected
+```
+
+あとはコンポーネントのスタイルを変更して、再度スクリーンショットの撮影と比較コマンドの実行をすれば、以下の様に差分を検出した状態のレポートが出力される。
+
+![](./Visual%20Regression%20Testing.gif)
