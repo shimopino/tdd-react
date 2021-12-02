@@ -6,11 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "storycap": "storycap --serverCmd \"npm run storybook\" http://localhost:6006 --serverTimeout 60000",
-    "vrt": "dotenv -e .env -- reg-suit run"
+    "test": "jest"
   },
   "dependencies": {
     "react": "^17.0.0",
