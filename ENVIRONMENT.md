@@ -439,14 +439,52 @@ module.exports = {
 };
 ```
 
+## VRT の用意
+
+```bash
+npm install --save-dev storycap puppeteer
+```
+
+```json
+{
+  "scripts": {
+    "storycap": "storycap --serverCmd \"npm run storybook\" http://localhost:6006 --serverTimeout 60000"
+  }
+}
+```
+
+```bash
+./__screenshots__
+├── Board
+│   ├── All\ O.png
+│   ├── All\ Triangle.png
+│   ├── All\ X.png
+│   └── Default.png
+├── Game
+│   ├── Default.png
+│   ├── Tuen\ No\ 8\ Winner\ O.png
+│   ├── Turn\ No\ 1.png
+│   ├── Turn\ No\ 2.png
+│   └── Turn\ No\ 5.png
+├── Move
+│   ├── Default.png
+│   └── Second\ Tern.png
+├── Square
+│   ├── Default.png
+│   ├── O.png
+│   └── X.png
+└── Status
+    ├── Default.png
+    ├── Draw.png
+    └── Winner.png
+```
+
+## Cypress の用意
+
 ```bash
 # E2E用のライブラリを追加する
 npm install --save-dev cypress @testing-library/cypress
 
 npm install --save-dev \
-    prettier \
-    eslint-config-prettier \
-    eslint-plugin-jest-dom \
-    eslint-plugin-testing-library \
     eslint-plugin-cypress
 ```
