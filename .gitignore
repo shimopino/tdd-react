@@ -5,3 +5,4 @@ dist-ssr
 *.local
 .reg
 __screenshots__
+.env

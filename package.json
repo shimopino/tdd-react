@@ -10,7 +10,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "storycap": "storycap --serverCmd \"npm run storybook\" http://localhost:6006 --serverTimeout 60000",
-    "vrt": "reg-suit run"
+    "vrt": "dotenv -e .env -- reg-suit run"
   },
   "dependencies": {
     "react": "^17.0.0",
@@ -35,6 +35,7 @@
     "@vitejs/plugin-react": "^1.0.0",
     "babel-loader": "^8.2.3",
     "cypress": "^9.1.1",
+    "dotenv-cli": "^4.1.1",
     "eslint": "^8.4.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -52,6 +53,7 @@
     "prettier": "^2.5.1",
     "puppeteer": "^12.0.1",
     "reg-keygen-git-hash-plugin": "^0.11.1",
+    "reg-publish-s3-plugin": "^0.11.0",
     "reg-suit": "^0.11.1",
     "sass": "^1.44.0",
     "storybook-builder-vite": "^0.1.10",

@@ -536,6 +536,10 @@ npm install --save-dev reg-suit
 }
 ```
 
+```bash
+npm install --save-dev dotenv-cli
+```
+
 ## Cypress の用意
 
 ```bash

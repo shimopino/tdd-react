@@ -2,13 +2,16 @@
   "core": {
     "workingDir": ".reg",
     "actualDir": "__screenshots__",
-    "thresholdRate": 0,
+    "thresholdRate": 0.1,
     "addIgnore": true,
     "ximgdiff": {
       "invocationType": "client"
     }
   },
   "plugins": {
-    "reg-keygen-git-hash-plugin": true
+    "reg-keygen-git-hash-plugin": {},
+    "reg-publish-s3-plugin": {
+      "bucketName": "visual-regression-testing-bucket"
+    }
   }
 }
