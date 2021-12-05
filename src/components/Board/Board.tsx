@@ -1,7 +1,6 @@
-import React from 'react';
 import { Square } from '../Square/Square';
 import { SquareValue } from '../../types/tictactoe';
-import './Board.css';
+import styles from './Board.module.scss';
 
 export interface Props {
   squares: SquareValue[];
@@ -21,17 +20,17 @@ export const Board = ({ squares, onClick }: Props): JSX.Element => {
 
   return (
     <>
-      <div className="board-row">
+      <div className={styles.boardRow}>
         {renderSquare(0)}
         {renderSquare(1)}
         {renderSquare(2)}
       </div>
-      <div className="board-row">
+      <div className={styles.boardRow}>
         {renderSquare(3)}
         {renderSquare(4)}
         {renderSquare(5)}
       </div>
-      <div className="board-row">
+      <div className={styles.boardRow}>
         {renderSquare(6)}
         {renderSquare(7)}
         {renderSquare(8)}

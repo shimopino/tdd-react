@@ -1,6 +1,5 @@
-import React from 'react';
 import { SquareValue } from '../../types/tictactoe';
-import './Square.css';
+import styles from './Square.module.scss';
 
 export interface Props {
   value: SquareValue;
@@ -8,7 +7,12 @@ export interface Props {
 }
 
 export const Square = ({ value, onClick }: Props): JSX.Element => (
-  <button type="button" className="square" onClick={onClick} data-e2e="square">
+  <button
+    type="button"
+    className={styles.square}
+    onClick={onClick}
+    data-e2e="square"
+  >
     {value}
   </button>
 );

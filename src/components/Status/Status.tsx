@@ -1,10 +1,11 @@
-import React from 'react';
-import './Status.css';
+import styles from './Status.module.scss';
 
 export interface Props {
   status: string;
 }
 
 export const Status = ({ status }: Props) => (
-  <div data-e2e="status">{status}</div>
+  <div className={styles.status} data-e2e="status">
+    {status}
+  </div>
 );
