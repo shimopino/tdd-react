@@ -479,6 +479,63 @@ npm install --save-dev storycap puppeteer
     └── Winner.png
 ```
 
+## req-suit の追加
+
+```bash
+npm install --save-dev reg-suit
+```
+
+```bash
+❯❯❯ npx reg-suit init
+
+[reg-suit] info version: 0.11.1
+? Plugin(s) to install (bold: recommended)  reg-keygen-git-hash-plugin : Detect the snapshot key to be compare
+ with using Git hash.
+[reg-suit] info Install dependencies to the local directory. This procedure takes some minutes, please wait.
+? Working directory of reg-suit. .reg
+? Append ".reg" entry to your .gitignore file. Yes
+? Directory contains actual images. __screenshots__
+? Threshold, ranges from 0 to 1. Smaller value makes the comparison more sensitive. 0
+[reg-suit] info Configuration:
+[reg-suit] info {
+  "core": {
+    "workingDir": ".reg",
+    "actualDir": "__screenshots__",
+    "thresholdRate": 0,
+    "addIgnore": true,
+    "ximgdiff": {
+      "invocationType": "client"
+    }
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": true
+  }
+}
+? Update configuration file Yes
+? Copy sample images to working dir Yes
+[reg-suit] info Initialization ended successfully ✨
+[reg-suit] info Execute 'reg-suit run' ⭐
+```
+
+これで以下の様な設定ファイルが作成される。
+
+```js
+{
+  "core": {
+    "workingDir": ".reg",
+    "actualDir": "__screenshots__",
+    "thresholdRate": 0,
+    "addIgnore": true,
+    "ximgdiff": {
+      "invocationType": "client"
+    }
+  },
+  "plugins": {
+    "reg-keygen-git-hash-plugin": true
+  }
+}
+```
+
 ## Cypress の用意
 
 ```bash

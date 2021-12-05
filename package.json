@@ -9,7 +9,8 @@
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "storycap": "storycap --serverCmd \"npm run storybook\" http://localhost:6006 --serverTimeout 60000"
+    "storycap": "storycap --serverCmd \"npm run storybook\" http://localhost:6006 --serverTimeout 60000",
+    "vrt": "reg-suit run"
   },
   "dependencies": {
     "react": "^17.0.0",
@@ -50,6 +51,8 @@
     "msw": "^0.36.0",
     "prettier": "^2.5.1",
     "puppeteer": "^12.0.1",
+    "reg-keygen-git-hash-plugin": "^0.11.1",
+    "reg-suit": "^0.11.1",
     "sass": "^1.44.0",
     "storybook-builder-vite": "^0.1.10",
     "storycap": "^3.1.0",
